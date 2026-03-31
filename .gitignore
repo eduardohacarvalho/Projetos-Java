@@ -1,0 +1,66 @@
+# === Java ===
+*.class
+*.log
+*.ctxt
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Crash logs da Máquina Virtual Java
+hs_err_pid*
+replay_pid*
+
+# === IntelliJ IDEA ===
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+cmake-build-*/
+
+# === Maven ===
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# === Eclipse (Importante para limpar os .metadata que apareceram no seu commit) ===
+.metadata/
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+.project
+.classpath
+
+# === macOS ===
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon\r
+._*
+.Spotlight-V100
+.Trashes
+*.lp7
+*.document
+*.dependency
+
+# === Arquivos de Configuração Sensíveis ===
+# Se você usar arquivos para guardar senhas do banco, ignore-os aqui
+# db.properties
