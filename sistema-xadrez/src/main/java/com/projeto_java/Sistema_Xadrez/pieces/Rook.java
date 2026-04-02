@@ -2,11 +2,11 @@ package com.projeto_java.Sistema_Xadrez.pieces;
 
 import com.projeto_java.Sistema_Xadrez.boardgame.Board;
 import com.projeto_java.Sistema_Xadrez.chess.ChessPiece;
+import com.projeto_java.Sistema_Xadrez.chess.ChessColor; // Import correto da sua cor
 
-import java.awt.*;
 // Rook = Torre
 public class Rook extends ChessPiece {
-    public Rook(Board board, Color color) {
+    public Rook(Board board, ChessColor color) { // Alterado para ChessColor
         super(board, color);
     }
 

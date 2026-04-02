@@ -35,6 +35,19 @@ public class Board {
         return pieces[position.getRow()][position.getColumn()];
     }
 
+    public Piece removePiece (Position position){
+        if (!positionExists(position)){
+            throw new BoardException("ERRO: Posição não está no tabuleiro");
+        }
+        if (piece(position) == null){
+            return null;
+        }
+        Piece aux = piece(position);
+        aux.position = null;
+        pieces[position.getRow()][position.getColumn()] = null;
+        return aux;
+    }
+
     public void placePiece(Piece piece, Position position){
         if (thereIsAPiece(position)){
             throw new BoardException("ERRO: Já tem uma peça na posição " + position);

@@ -3,18 +3,16 @@ package com.projeto_java.Sistema_Xadrez.chess;
 import com.projeto_java.Sistema_Xadrez.boardgame.Board;
 import com.projeto_java.Sistema_Xadrez.boardgame.Piece;
 
-import java.awt.*;
-
 public class ChessPiece extends Piece {
 
-    private Color color;
+    private ChessColor chessColor;
 
-    public ChessPiece(Board board, Color color) {
+    public ChessPiece(Board board, ChessColor chessColor) {
         super(board);
-        this.color = color;
+        this.chessColor = chessColor;
     }
 
-    public Color getColor() {
-        return color;
+    public ChessColor getColor() {
+        return chessColor;
     }
 }
