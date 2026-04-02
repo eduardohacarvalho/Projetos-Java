@@ -6,7 +6,7 @@ public class Board {
     private Piece[][] pieces;
 
     public Board(Integer rows, Integer columns) {
-        if (rows < 1 && columns < 1){
+        if (rows < 1 || columns < 1){
             throw new BoardException("ERRO: Não é possível criar o tabuleiro com menos que 1 linha e 1 coluna.");
         }
         this.rows = rows;
