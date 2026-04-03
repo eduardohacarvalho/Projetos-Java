@@ -1,5 +1,6 @@
 package com.projeto_java.Sistema_Xadrez;
 
+import com.projeto_java.Sistema_Xadrez.chess.ChessMatch;
 import com.projeto_java.Sistema_Xadrez.chess.ChessPiece;
 import com.projeto_java.Sistema_Xadrez.chess.ChessColor;
 import com.projeto_java.Sistema_Xadrez.chess.ChessPosition;
@@ -46,6 +47,14 @@ public class UI {
             throw new InputMismatchException("Erro: A posição deve ser entre a1 e h8.");
         }
     }
+
+    public static void printMatch (ChessMatch chessMatch){
+        printBoard(chessMatch.getPieces());
+        System.out.println();
+        System.out.println("Turno: " + chessMatch.getTurn());
+        System.out.println("Aguardando " + chessMatch.getCurrentPlayer());
+    }
+
     public static void printBoard(ChessPiece[][] pieces){
         for (int i=0; i< pieces.length; i++){
             System.out.print((8 - i) + " ");
@@ -85,11 +94,8 @@ public class UI {
 
     private static void printPiece(ChessPiece piece, boolean background){
         if (background){
-            if (piece == null) {
-                System.out.print(ANSI_BLUE_BACKGROUND + "-" + ANSI_RESET);
-            } else {
-                System.out.print(ANSI_BLUE_BACKGROUND + piece + ANSI_RESET);
-            }
+            System.out.print(ANSI_BLUE_BACKGROUND + ((piece == null) ? "-" : piece) + ANSI_RESET);
+
         }
         if (piece == null) {
             System.out.print("-");
