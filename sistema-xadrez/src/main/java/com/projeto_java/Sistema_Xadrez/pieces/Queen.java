@@ -5,7 +5,7 @@ import com.projeto_java.Sistema_Xadrez.boardgame.Position;
 import com.projeto_java.Sistema_Xadrez.chess.ChessColor;
 import com.projeto_java.Sistema_Xadrez.chess.ChessPiece;
 
-// Queen = Rainha
+// Queen = DAMA
 public class Queen extends ChessPiece {
 
     public Queen(Board board, ChessColor color) {
@@ -14,7 +14,7 @@ public class Queen extends ChessPiece {
 
     @Override
     public String toString() {
-        return "R";
+        return "D";
     }
 
     @Override

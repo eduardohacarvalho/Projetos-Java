@@ -58,6 +58,9 @@ public class UI {
         System.out.println();
         System.out.println("Turno: " + chessMatch.getTurn());
         System.out.println("Aguardando " + chessMatch.getCurrentPlayer());
+        if (chessMatch.getCheck()){
+            System.out.println("O Rei está em cheque!");
+        }
     }
 
     public static void printBoard(ChessPiece[][] pieces){
@@ -98,12 +101,11 @@ public class UI {
     }
 
     private static void printPiece(ChessPiece piece, boolean background){
-        if (background){
-            System.out.print(ANSI_BLUE_BACKGROUND + ((piece == null) ? "-" : piece) + ANSI_RESET);
-
+        if (background) {
+            System.out.print(ANSI_BLUE_BACKGROUND);
         }
         if (piece == null) {
-            System.out.print("-");
+            System.out.print("-" + ANSI_RESET);
         }
         else {
             if (piece.getColor() == ChessColor.WHITE) {

@@ -39,7 +39,7 @@ public class SistemaXadrezApplication {
                 if (capturedPiece != null){
                     captured.add(capturedPiece);
                 }
-            } catch (InputMismatchException e){
+            } catch (ChessException e){
                 System.out.println(e.getMessage());
                 sc.nextLine();
             }
