@@ -45,6 +45,29 @@ public class King extends ChessPiece {
             mat[p.getRow()][p.getColumn()] = true;
         }
 
+        // para cima e direita
+        p.setValues(position.getRow() + 1, position.getColumn() + 1);
+        if (getBoard().positionExists(p) && ( !getBoard().thereIsAPiece(p) || isThereOpponentPiece(p))){
+            mat[p.getRow()][p.getColumn()] = true;
+        }
+
+        // para baixo e direita
+        p.setValues(position.getRow() - 1, position.getColumn() + 1);
+        if (getBoard().positionExists(p) && ( !getBoard().thereIsAPiece(p) || isThereOpponentPiece(p))){
+            mat[p.getRow()][p.getColumn()] = true;
+        }
+
+        // para cima e esquerda
+        p.setValues(position.getRow() + 1, position.getColumn() - 1);
+        if (getBoard().positionExists(p) && ( !getBoard().thereIsAPiece(p) || isThereOpponentPiece(p))){
+            mat[p.getRow()][p.getColumn()] = true;
+        }
+
+        // para baixo e esquerda
+        p.setValues(position.getRow() - 1, position.getColumn() - 1);
+        if (getBoard().positionExists(p) && ( !getBoard().thereIsAPiece(p) || isThereOpponentPiece(p))){
+            mat[p.getRow()][p.getColumn()] = true;
+        }
         return mat;
     }
 }
