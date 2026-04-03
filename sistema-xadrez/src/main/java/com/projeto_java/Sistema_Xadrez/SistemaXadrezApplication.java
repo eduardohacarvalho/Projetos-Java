@@ -41,7 +41,12 @@ public class SistemaXadrezApplication {
                 }
                 if (chessMatch.getPromoted() != null){
                     System.out.print("Informe a peça desejada para promoção: (B/C/D/T): ");
-                    String type = sc.nextLine();
+                    String type = sc.nextLine().toUpperCase();
+                    while (!type.equals("B") && !type.equals("C") && !type.equals("D") && !type.equals("T")){
+                        System.out.print("VALOR INVALIDO! Informe a peça desejada para promoção: (B/C/D/T): ");
+                         type = sc.nextLine().toUpperCase();
+
+                    }
                     chessMatch.replacePromotedPiece(type);
                 }
             } catch (ChessException e){

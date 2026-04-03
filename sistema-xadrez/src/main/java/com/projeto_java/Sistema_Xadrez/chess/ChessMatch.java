@@ -5,7 +5,6 @@ import com.projeto_java.Sistema_Xadrez.boardgame.Piece;
 import com.projeto_java.Sistema_Xadrez.boardgame.Position;
 import com.projeto_java.Sistema_Xadrez.chess.pieces.*;
 
-import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -109,7 +108,7 @@ public class ChessMatch {
             throw  new IllegalStateException("Não tem peça para ser promovida");
         }
         if (!type.equals("B") && !type.equals("C") && !type.equals("D") && !type.equals("T")){
-            throw new InvalidParameterException("Tipo de peça invalido");
+            return promoted;
         }
         Position pos = promoted.getChessPosition().toPosition();
         Piece p = board.removePiece(pos);
