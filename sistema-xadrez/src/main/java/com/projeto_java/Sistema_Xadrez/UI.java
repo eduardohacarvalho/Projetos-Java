@@ -133,7 +133,7 @@ public class UI {
         System.out.print(ANSI_RESET);
         System.out.println("PRETAS:");
         System.out.print(ANSI_YELLOW);
-        System.out.println(Arrays.toString(white.toArray()));
+        System.out.println(Arrays.toString(black.toArray()));
         System.out.print(ANSI_RESET);
 
     }
