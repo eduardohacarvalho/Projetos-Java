@@ -39,6 +39,11 @@ public class SistemaXadrezApplication {
                 if (capturedPiece != null){
                     captured.add(capturedPiece);
                 }
+                if (chessMatch.getPromoted() != null){
+                    System.out.print("Informe a peça desejada para promoção: (B/C/D/T): ");
+                    String type = sc.nextLine();
+                    chessMatch.replacePromotedPiece(type);
+                }
             } catch (ChessException e){
                 System.out.println(e.getMessage());
                 sc.nextLine();
