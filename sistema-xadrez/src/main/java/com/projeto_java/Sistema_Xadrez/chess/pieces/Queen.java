@@ -1,4 +1,4 @@
-package com.projeto_java.Sistema_Xadrez.pieces;
+package com.projeto_java.Sistema_Xadrez.chess.pieces;
 
 import com.projeto_java.Sistema_Xadrez.boardgame.Board;
 import com.projeto_java.Sistema_Xadrez.boardgame.Position;

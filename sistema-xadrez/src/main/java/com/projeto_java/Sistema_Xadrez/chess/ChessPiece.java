@@ -7,10 +7,23 @@ import com.projeto_java.Sistema_Xadrez.boardgame.Position;
 public abstract class ChessPiece extends Piece {
 
     private ChessColor chessColor;
+    private int moveCount;
 
     public ChessPiece(Board board, ChessColor chessColor) {
         super(board);
         this.chessColor = chessColor;
+    }
+
+    public void increaseMoveCount(){
+        moveCount++;
+    }
+
+    public void decreaseMoveCount(){
+        moveCount--;
+    }
+
+    public int getMoveCount() {
+        return moveCount;
     }
 
     public ChessColor getColor() {
