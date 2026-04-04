@@ -2,6 +2,7 @@ package com.eduardohacarvalho.mongodb.config;
 
 import com.eduardohacarvalho.mongodb.domain.Post;
 import com.eduardohacarvalho.mongodb.domain.User;
+import com.eduardohacarvalho.mongodb.dto.AuthorDTO;
 import com.eduardohacarvalho.mongodb.repository.PostRepository;
 import com.eduardohacarvalho.mongodb.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,8 +36,8 @@ public class Instantiation implements CommandLineRunner {
         userRepository.saveAll(Arrays.asList(maria, alex, bob));
 
         postRepository.deleteAll();
-        Post post1 = new Post (null, sdf.parse("21/03/2018"), "Partiu viagem", "Vou viajar para SP. Abraços!", maria);
-        Post post2 = new Post (null, sdf.parse("23/03/2018"), "Bom dia", "Acordei feliz hoje!", maria);
+        Post post1 = new Post (null, sdf.parse("21/03/2018"), "Partiu viagem", "Vou viajar para SP. Abraços!", new AuthorDTO(maria));
+        Post post2 = new Post (null, sdf.parse("23/03/2018"), "Bom dia", "Acordei feliz hoje!", new AuthorDTO(maria));
         postRepository.saveAll(Arrays.asList(post1, post2));
     }
 }
