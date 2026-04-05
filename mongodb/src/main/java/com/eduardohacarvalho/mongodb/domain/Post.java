@@ -1,10 +1,13 @@
 package com.eduardohacarvalho.mongodb.domain;
 
 import com.eduardohacarvalho.mongodb.dto.AuthorDTO;
+import com.eduardohacarvalho.mongodb.dto.CommentDTO;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 public class Post implements Serializable {
@@ -14,6 +17,12 @@ public class Post implements Serializable {
     private String title;
     private String body;
     private AuthorDTO author;
+
+    private List<CommentDTO> comments = new ArrayList<>();
+
+    public List<CommentDTO> getComments() {
+        return comments;
+    }
 
     public Post(){}
 
