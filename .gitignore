@@ -64,3 +64,6 @@ Icon\r
 # === Arquivos de Configuração Sensíveis ===
 # Se você usar arquivos para guardar senhas do banco, ignore-os aqui
 # db.properties
+application.properties
+target/
+*.class

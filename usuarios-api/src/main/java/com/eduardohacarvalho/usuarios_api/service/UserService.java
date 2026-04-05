@@ -2,17 +2,35 @@ package com.eduardohacarvalho.usuarios_api.service;
 
 import com.eduardohacarvalho.usuarios_api.model.User;
 import com.eduardohacarvalho.usuarios_api.repository.UserRepository;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.context.annotation.Lazy;
 
 import java.util.List;
 
 @Service
-public class UserService {
+public class UserService implements UserDetailsService {
 
     private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
-    public UserService(UserRepository userRepository) {
+    public UserService(UserRepository userRepository, @Lazy PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
+    }
+
+    @Override
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        return userRepository.findByEmail(email)
+                .orElseThrow(() -> new UsernameNotFoundException("Usuário não encontrado"));
+    }
+
+    public User findByEmail(String email) {
+        return userRepository.findByEmail(email)
+                .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
     }
 
     public List<User> findAll() {
@@ -24,15 +42,11 @@ public class UserService {
                 .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
     }
 
-    public User findByEmail(String email) {
-        return userRepository.findByEmail(email)
-                .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
-    }
-
     public User save(User user) {
         userRepository.findByEmail(user.getEmail()).ifPresent(u -> {
             throw new RuntimeException("Email já cadastrado");
         });
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
         return userRepository.save(user);
     }
 
@@ -40,7 +54,7 @@ public class UserService {
         User user = findById(id);
         user.setName(userAtualizado.getName());
         user.setEmail(userAtualizado.getEmail());
-        user.setPassword(userAtualizado.getPassword());
+        user.setPassword(passwordEncoder.encode(userAtualizado.getPassword()));
         return userRepository.save(user);
     }
 
@@ -49,3 +63,4 @@ public class UserService {
         userRepository.delete(user);
     }
 }
+

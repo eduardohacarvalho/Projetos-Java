@@ -1,5 +1,6 @@
 package com.eduardohacarvalho.usuarios_api.controller;
 
+import com.eduardohacarvalho.usuarios_api.dto.UserResponse;
 import com.eduardohacarvalho.usuarios_api.model.User;
 import com.eduardohacarvalho.usuarios_api.service.UserService;
 import jakarta.validation.Valid;
@@ -20,28 +21,32 @@ public class UserController {
     }
 
     @GetMapping
-    public ResponseEntity<List<User>> findAll() {
-        return ResponseEntity.ok(userService.findAll());
+    public ResponseEntity<List<UserResponse>> findAll() {
+        List<UserResponse> users = userService.findAll()
+                .stream()
+                .map(UserResponse::new)
+                .toList();
+        return ResponseEntity.ok(users);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<User> findById(@PathVariable Long id) {
-        return ResponseEntity.ok(userService.findById(id));
+    public ResponseEntity<UserResponse> findById(@PathVariable Long id) {
+        return ResponseEntity.ok(new UserResponse(userService.findById(id)));
     }
 
     @GetMapping("/email/{email}")
-    public ResponseEntity<User> findByEmail(@PathVariable String email) {
-        return ResponseEntity.ok(userService.findByEmail(email));
+    public ResponseEntity<UserResponse> findByEmail(@PathVariable String email) {
+        return ResponseEntity.ok(new UserResponse(userService.findByEmail(email)));
     }
 
     @PostMapping
-    public ResponseEntity<User> save(@RequestBody @Valid User user) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(userService.save(user));
+    public ResponseEntity<UserResponse> save(@RequestBody @Valid User user) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(new UserResponse(userService.save(user)));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<User> update(@PathVariable Long id, @RequestBody @Valid User user) {
-        return ResponseEntity.ok(userService.update(id, user));
+    public ResponseEntity<UserResponse> update(@PathVariable Long id, @RequestBody @Valid User user) {
+        return ResponseEntity.ok(new UserResponse(userService.update(id, user)));
     }
 
     @DeleteMapping("/{id}")
