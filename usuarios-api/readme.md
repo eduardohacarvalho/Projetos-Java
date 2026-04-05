@@ -15,12 +15,19 @@ API REST desenvolvida com Spring Boot para gerenciamento de usuários e tarefas,
 
 ## 📁 Estrutura do Projeto
 src/main/java/com/eduardohacarvalho/usuarios_api
+
 ├── controller       # Endpoints REST
+
 ├── service          # Regras de negócio
+
 ├── repository       # Comunicação com o banco
+
 ├── model            # Entidades JPA
+
 ├── security         # Configuração JWT e Spring Security
+
 ├── dto              # Objetos de transferência de dados
+
 └── exception        # Tratamento global de erros
 
 ## ⚙️ Pré-requisitos
@@ -120,4 +127,4 @@ POST /tasks
 
 ## 👨‍💻 Autor
 
-Eduardo — [GitHub](https://github.com/eduardohacarvalho)
+Eduardo Carvalho — [GitHub](https://github.com/eduardohacarvalho)
