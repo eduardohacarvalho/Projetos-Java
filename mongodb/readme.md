@@ -1,5 +1,11 @@
 # 📝 MongoDB API - Users & Posts
 
+Projeto desenvolvido durante o curso **Java COMPLETO — Programação Orientada a Objetos + Projetos**, ministrado por **Nelio Alves**.
+
+Autor: **Eduardo Carvalho** — [github.com/eduardohacarvalho](https://github.com/eduardohacarvalho)
+
+---
+## 📋 Sobre o Projeto
 API REST desenvolvida com Spring Boot e MongoDB para gerenciamento de usuários e posts, com suporte a comentários e busca avançada.
 
 ## 🚀 Tecnologias
@@ -87,8 +93,3 @@ Exemplo de uso: GET /posts/fullsearch?text=viagem&minDate=2018-03-21&maxDate=201
 
 ### Post { "id": "...", "date": "2018-03-21", "title": "Partiu viagem", "body": "Vou viajar para SP. Abraços!", "author": { "id": "...", "name": "Maria Brown" }, "comments": [ { "text": "Boa viagem mano!", "date": "2018-03-21", "author": { "id": "...", "name": "Alex Green" } } ] }
 
-## 👨‍💻 Sobre
-
-Projeto desenvolvido como exercício prático durante o curso Java COMPLETO Programação Orientada a Objetos + Projetos de Nelio Alves.
-
-Implementado por Eduardo Carvalho — https://github.com/eduardohacarvalho

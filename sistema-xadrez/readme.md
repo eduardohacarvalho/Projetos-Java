@@ -1,6 +1,13 @@
 # ♟️ Sistema de Xadrez
 
+Projeto desenvolvido durante o curso **Java COMPLETO — Programação Orientada a Objetos + Projetos**, ministrado por **Nelio Alves**.
+
+Autor: **Eduardo Carvalho** — [github.com/eduardohacarvalho](https://github.com/eduardohacarvalho)
+
+---
+## 📋 Sobre o Projeto
 Jogo de xadrez completo desenvolvido em Java, executado via terminal com interface colorida.
+
 
 ## 🚀 Tecnologias
 
@@ -70,8 +77,3 @@ src/main/java/com/projeto_java/Sistema_Xadrez
 
 O projeto segue uma arquitetura em camadas separando as responsabilidades: boardgame contém a lógica genérica do tabuleiro sem conhecimento das regras do xadrez, enquanto chess contém toda a lógica específica do xadrez, como movimentos especiais, cheque e xeque-mate.
 
-## 👨‍💻 Autor
-
-Eduardo Carvalho — https://github.com/eduardohacarvalho
-
-Projeto desenvolvido durante o curso Java COMPLETO Programação Orientada a Objetos + Projetos ministrado por Nelio Alves.
