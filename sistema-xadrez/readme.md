@@ -72,6 +72,6 @@ O projeto segue uma arquitetura em camadas separando as responsabilidades: board
 
 ## 👨‍💻 Autor
 
-Eduardo — https://github.com/eduardohacarvalho
+Eduardo Carvalho — https://github.com/eduardohacarvalho
 
 Projeto desenvolvido durante o curso Java COMPLETO Programação Orientada a Objetos + Projetos ministrado por Nelio Alves.
